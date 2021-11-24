@@ -6,6 +6,6 @@ using namespace std;
 
 int main()
 {
-	scoreboardEdit();
+	scorebaordEdit();
 	return 0;
 }
