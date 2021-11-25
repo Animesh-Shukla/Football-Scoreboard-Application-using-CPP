@@ -111,7 +111,7 @@ class Scoreboard
     };
 };
 
-void scorebaordEdit()
+void SBEdit()
 {
     Scoreboard s;
     Team HometeamBoard;//object for Team that becomes Scoreboard member
@@ -157,7 +157,7 @@ void scorebaordEdit()
         cout << MenuReset;// reset menu color to white for legibility in choice selection
         cin >> choice;
 
-        if(choice == 'A' || choice == 'a')
+        if(choice == 'A' or choice == 'a')
         {
             cout << "\nHometeam Name Update \n";
             cout << "What Is The New Team Name? ";
@@ -167,7 +167,7 @@ void scorebaordEdit()
             Sleep(1); 
 
         }
-        else if(choice == 'B' || choice == 'b')
+        else if(choice == 'B' or choice == 'b')
         {
             cout << "\nVisitors Name Update \n";
             cout << "What Is The New Team Name?...> ";
@@ -176,7 +176,7 @@ void scorebaordEdit()
             cout << "Updating Team  Name for Visitors to  " << VisitorsBoard.getTeamName() << endl;
             Sleep(1);
         }
-        else if(choice == 'C' || choice == 'c')
+        else if(choice == 'C' or choice == 'c')
         {
             cout << "\nHometeam Score Update \n" ;
             cout << "What is the new score?...> ";
@@ -185,7 +185,7 @@ void scorebaordEdit()
             cout << "\nUpdating New Hometown Score To ..." << HometeamBoard.getTeamScore() << endl;
             Sleep(1);
         }
-        else if(choice == 'D' || choice == 'd')
+        else if(choice == 'D' or choice == 'd')
         {
             cout << "\nVisitor Score Update \n" ;
             cout << "What Is The New Score?...> ";
@@ -194,7 +194,7 @@ void scorebaordEdit()
             cout << "\nUpdating New Visitor Score To ..." << VisitorsBoard.getTeamScore() << endl;
             Sleep(1);
         }    
-        else if(choice == 'E' || choice == 'e')
+        else if(choice == 'E' or choice == 'e')
         {
             cout << "\nQuarter Update \n";
             cout << "What Is The Updated Quarter? ...>";
@@ -203,7 +203,7 @@ void scorebaordEdit()
             cout << "\nUpdating Quarter To ..." << s.getQuarter() << endl;
             Sleep(1);
         }
-        else if(choice == 'F' || choice == 'f')
+        else if(choice == 'F' or choice == 'f')
         {
             cout << "\nDown Update \n";
             cout << "What is the new Down? ...>";
@@ -212,7 +212,7 @@ void scorebaordEdit()
             cout << "\nUpdating Down To ..." << s.getDown() << endl;
             Sleep(1);
         }
-        else if(choice == 'G' || choice == 'g')
+        else if(choice == 'G' or choice == 'g')
         {
             cout << "\nTo Go Update \n";
             cout << "What Is The New To Go? ...>";
@@ -221,7 +221,7 @@ void scorebaordEdit()
             cout << "\nUpdating  To Go To ..." << s.getToGo() << endl;
             Sleep(1);
         }
-        else if(choice == 'H' || choice == 'h')
+        else if(choice == 'H' or choice == 'h')
         {
             cout << "\nHometeam Coach Name Update\n";
             cout << "What Is The Coach Name?...>";
@@ -230,7 +230,7 @@ void scorebaordEdit()
             cout << "\nUpdating Coach Name To ..." << HometeamBoard.getCoachName() << endl;
             Sleep(1);
         }
-        else if(choice == 'I' || choice == 'i')
+        else if(choice == 'I' or choice == 'i')
         {
             cout << "\nVisitors Coach Name Update\n";
             cout << "What Is The Coach Name?...>";
@@ -239,7 +239,7 @@ void scorebaordEdit()
             cout << "\nUpdating Coach Name To ..." << VisitorsBoard.getCoachName() << endl;
             Sleep(1);
         }
-        else if(choice == 'J' || choice == 'j')
+        else if(choice == 'J' or choice == 'j')
         {
             cout << "\nHometeam City Update\n";
             cout << "What Is The City Name?...>";
@@ -248,7 +248,7 @@ void scorebaordEdit()
             cout << "\nUpdating Hometeam City Name To ..." << HometeamBoard.getCoachName() << endl;
             Sleep(1);
         }
-        else if(choice == 'K' || choice == 'k')
+        else if(choice == 'K' or choice == 'k')
         {
             cout << "\nVisitors City Update\n";
             cout << "What Is The City Name?...>";
@@ -257,7 +257,7 @@ void scorebaordEdit()
             cout << "\nUpdating Visitors City Name To ..." << VisitorsBoard.getCoachName() << endl;
             Sleep(1);
         }
-        else if(choice == 'L' || choice == 'l')
+        else if(choice == 'L' or choice == 'l')
         {
             cout << "\nPossession Update\n";
             cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
@@ -269,7 +269,7 @@ void scorebaordEdit()
         s.setHometeam(HometeamBoard);
         s.setVisitors(VisitorsBoard);               
     }
-    while(choice != 'x' && choice != 'X');
+    while(choice != 'x' and choice != 'X');
     {
         cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
         cout << "\nGO Cowboys! " << endl;
