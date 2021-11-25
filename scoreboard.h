@@ -157,121 +157,112 @@ void SBEdit()
         cout << MenuReset;// reset menu color to white for legibility in choice selection
         cin >> choice;
         choice=tolower(choice);
-        if( choice == 'a')
+        switch (choice)
         {
-            cout << "\nHometeam Name Update \n";
-            cout << "What Is The New Team Name? ";
-            cin >> newTeamName;
-            HometeamBoard.setTeamName(newTeamName);
-            cout << "Updating Team Name for Hometeam to " << HometeamBoard.getTeamName() << endl;
-            Sleep(1); 
-
-        }
-        else if( choice == 'b')
-        {
-            cout << "\nVisitors Name Update \n";
-            cout << "What Is The New Team Name?...> ";
-            cin >> newTeamName;
-            VisitorsBoard.setTeamName(newTeamName);
-            cout << "Updating Team  Name for Visitors to  " << VisitorsBoard.getTeamName() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'c')
-        {
-            cout << "\nHometeam Score Update \n" ;
-            cout << "What is the new score?...> ";
-            cin >> newTeamScore;
-            HometeamBoard.setTeamScore(newTeamScore);
-            cout << "\nUpdating New Hometown Score To ..." << HometeamBoard.getTeamScore() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'd')
-        {
-            cout << "\nVisitor Score Update \n" ;
-            cout << "What Is The New Score?...> ";
-            cin >> newTeamScore;
-            VisitorsBoard.setTeamScore(newTeamScore);
-            cout << "\nUpdating New Visitor Score To ..." << VisitorsBoard.getTeamScore() << endl;
-            Sleep(1);
-        }    
-        else if( choice == 'e')
-        {
-            cout << "\nQuarter Update \n";
-            cout << "What Is The Updated Quarter? ...>";
-            cin >> newQuarter;
-            s.SetQuarter(newQuarter);
-            cout << "\nUpdating Quarter To ..." << s.GetQuarter() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'f')
-        {
-            cout << "\nDown Update \n";
-            cout << "What is the new Down? ...>";
-            cin >> newDown;
-            s.SetDown(newDown);
-            cout << "\nUpdating Down To ..." << s.GetDown() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'g')
-        {
-            cout << "\nTo Go Update \n";
-            cout << "What Is The New To Go? ...>";
-            cin >> newToGo;
-            s.SetToGo(newToGo);
-            cout << "\nUpdating  To Go To ..." << s.GetToGo() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'h')
-        {
-            cout << "\nHometeam Coach Name Update\n";
-            cout << "What Is The Coach Name?...>";
-            cin >> newCoachName;
-            HometeamBoard.setCoachName(newCoachName);
-            cout << "\nUpdating Coach Name To ..." << HometeamBoard.getCoachName() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'i')
-        {
-            cout << "\nVisitors Coach Name Update\n";
-            cout << "What Is The Coach Name?...>";
-            cin >> newCoachName;
-            VisitorsBoard.setCoachName(newCoachName);
-            cout << "\nUpdating Coach Name To ..." << VisitorsBoard.getCoachName() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'j')
-        {
-            cout << "\nHometeam City Update\n";
-            cout << "What Is The City Name?...>";
-            cin >> newHomeCity;
-            HometeamBoard.setHomeCity(newHomeCity);
-            cout << "\nUpdating Hometeam City Name To ..." << HometeamBoard.getCoachName() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'k')
-        {
-            cout << "\nVisitors City Update\n";
-            cout << "What Is The City Name?...>";
-            cin >> newHomeCity;
-            VisitorsBoard.setHomeCity(newHomeCity);
-            cout << "\nUpdating Visitors City Name To ..." << VisitorsBoard.getCoachName() << endl;
-            Sleep(1);
-        }
-        else if( choice == 'l')
-        {
-            cout << "\nPossession Update\n";
-            cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
-            cin >> newPoss;
-            s.SetPoss(newPoss);
-            cout << "\nUpdating Possesssion To ... " << s.GetPoss() << endl;
-            Sleep(2);
+            case 'a':
+                cout << "\nHometeam Name Update \n";
+                cout << "What Is The New Team Name? ";
+                cin >> newTeamName;
+                HometeamBoard.setTeamName(newTeamName);
+                cout << "Updating Team Name for Hometeam to " << HometeamBoard.getTeamName() << endl;
+                Sleep(1); 
+                break;
+            case 'b':
+                cout << "\nVisitors Name Update \n";
+                cout << "What Is The New Team Name?...> ";
+                cin >> newTeamName;
+                VisitorsBoard.setTeamName(newTeamName);
+                cout << "Updating Team  Name for Visitors to  " << VisitorsBoard.getTeamName() << endl;
+                Sleep(1);
+                break;
+            case 'c':
+                cout << "\nHometeam Score Update \n" ;
+                cout << "What is the new score?...> ";
+                cin >> newTeamScore;
+                HometeamBoard.setTeamScore(newTeamScore);
+                cout << "\nUpdating New Hometown Score To ..." << HometeamBoard.getTeamScore() << endl;
+                Sleep(1);
+                break;
+            case 'd':
+                cout << "\nVisitor Score Update \n" ;
+                cout << "What Is The New Score?...> ";
+                cin >> newTeamScore;
+                VisitorsBoard.setTeamScore(newTeamScore);
+                cout << "\nUpdating New Visitor Score To ..." << VisitorsBoard.getTeamScore() << endl;
+                Sleep(1);
+                break;
+            case 'e':
+                cout << "\nQuarter Update \n";
+                cout << "What Is The Updated Quarter? ...>";
+                cin >> newQuarter;
+                s.SetQuarter(newQuarter);
+                cout << "\nUpdating Quarter To ..." << s.GetQuarter() << endl;
+                Sleep(1);
+                break;
+            case 'f':
+                cout << "\nDown Update \n";
+                cout << "What is the new Down? ...>";
+                cin >> newDown;
+                s.SetDown(newDown);
+                cout << "\nUpdating Down To ..." << s.GetDown() << endl;
+                Sleep(1);
+                break;
+            case 'g':
+                cout << "\nTo Go Update \n";
+                cout << "What Is The New To Go? ...>";
+                cin >> newToGo;
+                s.SetToGo(newToGo);
+                cout << "\nUpdating  To Go To ..." << s.GetToGo() << endl;
+                Sleep(1);
+                break;
+            case 'h':
+                cout << "\nHometeam Coach Name Update\n";
+                cout << "What Is The Coach Name?...>";
+                cin >> newCoachName;
+                HometeamBoard.setCoachName(newCoachName);
+                cout << "\nUpdating Coach Name To ..." << HometeamBoard.getCoachName() << endl;
+                Sleep(1);
+                break;
+            case 'i':
+                cout << "\nVisitors Coach Name Update\n";
+                cout << "What Is The Coach Name?...>";
+                cin >> newCoachName;
+                VisitorsBoard.setCoachName(newCoachName);
+                cout << "\nUpdating Coach Name To ..." << VisitorsBoard.getCoachName() << endl;
+                Sleep(1);
+                break;
+            case 'j':
+                cout << "\nHometeam City Update\n";
+                cout << "What Is The City Name?...>";
+                cin >> newHomeCity;
+                HometeamBoard.setHomeCity(newHomeCity);
+                cout << "\nUpdating Hometeam City Name To ..." << HometeamBoard.getCoachName() << endl;
+                Sleep(1);
+                break;
+            case 'k':
+                cout << "\nVisitors City Update\n";
+                cout << "What Is The City Name?...>";
+                cin >> newHomeCity;
+                VisitorsBoard.setHomeCity(newHomeCity);
+                cout << "\nUpdating Visitors City Name To ..." << VisitorsBoard.getCoachName() << endl;
+                Sleep(1);
+                break;
+            case 'l':
+                cout << "\nPossession Update\n";
+                cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
+                cin >> newPoss;
+                s.SetPoss(newPoss);
+                cout << "\nUpdating Possesssion To ... " << s.GetPoss() << endl;
+                Sleep(2);
+                break;
+            case 'x':
+                cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
+                cout << "\nGO Cowboys! " << endl;
+                break;
+            default:cout<<"BC"<<endl;
+                break;
         }
         s.SetHometeam(HometeamBoard);
         s.SetVisitors(VisitorsBoard);               
-    }
-    while(choice != 'x');
-    {
-        cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
-        cout << "\nGO Cowboys! " << endl;
-    }
+    }while(choice != 'x');
 }
