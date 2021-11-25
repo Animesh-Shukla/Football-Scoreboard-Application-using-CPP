@@ -34,10 +34,10 @@ class Team
 class Scoreboard
 {
     private:
-        int quarter;
+        int Quarter;
         int down;
-        int toGo;
-        bool poss;//Possesion if the home team has possession of ball true/false
+        int ToGo;
+        bool Possession;//Possesion if the home team has possession of ball true/false
         Team Hometeam;
         Team Visitors;
         Team coachName;
@@ -46,30 +46,30 @@ class Scoreboard
     public:
     Scoreboard()
     {
-        quarter = 1;
-        poss = true;//HomeTeam will have the ball
+        Quarter = 1;
+        Possession = true;//HomeTeam will have the ball
         down = 0;
-        toGo = 0;
+        ToGo = 0;
     }
-    void setQuarter(int q)   { quarter = q; }
-    void setDown   (int d)   { down = d; }
-    void setToGo   (int tG)  { toGo = tG; }
-    void setPoss   (bool pos){ poss = pos; }
-    void setHometeam (Team hT) { Hometeam = hT; }
-    void setVisitors (Team vT) { Visitors = vT; }
-    void setcoachName (Team cH) { coachName = cH;}
+    void SetQuarter(int q)   { Quarter = q; }
+    void SetDown   (int d)   { down = d; }
+    void SetToGo   (int tG)  { ToGo = tG; }
+    void SetPoss   (bool pos){ Possession = pos; }
+    void SetHometeam (Team hT) { Hometeam = hT; }
+    void SetVisitors (Team vT) { Visitors = vT; }
+    void SetCoachName (Team cH) { coachName = cH;}
     void setHomeCity (Team Hc) { HomeCity = Hc;}
  
-    int getQuarter() const { return quarter;}
-    int getDown() const { return down;}
-    int getToGo() const { return toGo;}
-    bool getPoss() const { return poss;}
-    Team getHometeam() const { return Hometeam; }
-    Team getVisitors() const { return Visitors; }
-    Team getcoachName() const { return coachName;}
+    int GetQuarter() const { return Quarter;}
+    int GetDown() const { return down;}
+    int GetToGo() const { return ToGo;}
+    bool GetPoss() const { return Possession;}
+    Team GetHomeTeam() const { return Hometeam; }
+    Team GetVisitors() const { return Visitors; }
+    Team GetcoachName() const { return coachName;}
     Team getHomeCity() const { return HomeCity; }
 
-    void showScoreboard()
+    void ShowScoreboard()
     {
         string color,colorRed, colorHome, colorVisitor = "";
         string reset = "\x1b[0m";
@@ -89,7 +89,7 @@ class Scoreboard
 
         cout << setw(6) << Hometeam.getTeamScore() << setw(30) << Visitors.getTeamScore() << endl;
 
-        if(poss == true)//displays the possession of the ball initially but changes due to user input selection
+        if(Possession == true)//displays the possession of the ball initially but changes due to user input selection
         {
             cout << setw(22)  << colorRed << "O<"<< reset << " POSS" << endl;
         }
@@ -98,10 +98,10 @@ class Scoreboard
             cout << setw(22) <<  "POSS" << colorRed << " >O" << reset << endl;
         }
 
-        cout << setw(25) << "Quarter: " << quarter << endl;
+        cout << setw(25) << "Quarter: " << Quarter << endl;
         cout << "\n" << endl;
 
-        cout << setw(10) << getDown() << " < Down" << setw(16) << "To Go > " << getToGo() << "\n" << endl;
+        cout << setw(10) << GetDown() << " < Down" << setw(16) << "To Go > " << GetToGo() << "\n" << endl;
 
         cout << colorHome << setw(6) << Hometeam.getCoachName() << colorVisitor << setw(30)<<  Visitors.getCoachName() << reset << endl;
         cout << colorHome<< setw(6) << Hometeam.getHomeCity() << colorVisitor<< setw(30) << Visitors.getHomeCity() << reset << endl;
@@ -129,12 +129,12 @@ void SBEdit()
     string MenuColor = "";
     string MenuReset = "";
 
-    s.setHometeam(HometeamBoard);
-    s.setVisitors(VisitorsBoard);
+    s.SetHometeam(HometeamBoard);
+    s.SetVisitors(VisitorsBoard);
       
     do 
     {
-        s.showScoreboard();
+        s.ShowScoreboard();
         MenuColor = "\x1b[31;15m";
         MenuReset = "\x1b[0m";
         cout << MenuColor;//Change Menu color to red
@@ -199,8 +199,8 @@ void SBEdit()
             cout << "\nQuarter Update \n";
             cout << "What Is The Updated Quarter? ...>";
             cin >> newQuarter;
-            s.setQuarter(newQuarter);
-            cout << "\nUpdating Quarter To ..." << s.getQuarter() << endl;
+            s.SetQuarter(newQuarter);
+            cout << "\nUpdating Quarter To ..." << s.GetQuarter() << endl;
             Sleep(1);
         }
         else if(choice == 'F' or choice == 'f')
@@ -208,8 +208,8 @@ void SBEdit()
             cout << "\nDown Update \n";
             cout << "What is the new Down? ...>";
             cin >> newDown;
-            s.setDown(newDown);
-            cout << "\nUpdating Down To ..." << s.getDown() << endl;
+            s.SetDown(newDown);
+            cout << "\nUpdating Down To ..." << s.GetDown() << endl;
             Sleep(1);
         }
         else if(choice == 'G' or choice == 'g')
@@ -217,8 +217,8 @@ void SBEdit()
             cout << "\nTo Go Update \n";
             cout << "What Is The New To Go? ...>";
             cin >> newToGo;
-            s.setToGo(newToGo);
-            cout << "\nUpdating  To Go To ..." << s.getToGo() << endl;
+            s.SetToGo(newToGo);
+            cout << "\nUpdating  To Go To ..." << s.GetToGo() << endl;
             Sleep(1);
         }
         else if(choice == 'H' or choice == 'h')
@@ -262,12 +262,12 @@ void SBEdit()
             cout << "\nPossession Update\n";
             cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
             cin >> newPoss;
-            s.setPoss(newPoss);
-            cout << "\nUpdating Possesssion To ... " << s.getPoss() << endl;
+            s.SetPoss(newPoss);
+            cout << "\nUpdating Possesssion To ... " << s.GetPoss() << endl;
             Sleep(2);
         }
-        s.setHometeam(HometeamBoard);
-        s.setVisitors(VisitorsBoard);               
+        s.SetHometeam(HometeamBoard);
+        s.SetVisitors(VisitorsBoard);               
     }
     while(choice != 'x' and choice != 'X');
     {
