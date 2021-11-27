@@ -78,7 +78,7 @@ class Scoreboard
         colorVisitor = "\x1b[36;15m";
 
         cout << color << "__________ Football Scoreboard __________" << reset << endl;
-        //cout << setw(24) << "||10:37||" << endl;
+        
         for( int i = 0; i < 40; i++) cout << "*";
         cout << endl;
         cout << colorHome <<setw(9)<< "HomeTeam" << colorVisitor << setw(29) <<"Visitors" << reset << endl;
@@ -269,7 +269,7 @@ void SBEdit()
                 break;
 
             default:
-                cout<<"BC"<<endl;
+                cout<<"Invalid Choice!!! Enter a valid choice or press X to exit"<<endl;
                 break;
 
         }
