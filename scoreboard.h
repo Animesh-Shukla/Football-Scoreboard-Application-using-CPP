@@ -1,5 +1,4 @@
 #include <iostream>
-#include <unistd.h>
 #include <iomanip>
 #include<windows.h>
 using namespace std;
@@ -155,7 +154,9 @@ void SBEdit()
         choice=tolower(choice);
         switch (choice)
         {
+
             case 'a':
+
                 cout << "\nHometeam Name Update \n";
                 cout << "What Is The New Team Name? ";
                 cin >> newTeamName;
@@ -165,6 +166,7 @@ void SBEdit()
                 break;
 
             case 'b':
+
                 cout << "\nVisitors Name Update \n";
                 cout << "What Is The New Team Name?...> ";
                 cin >> newTeamName;
@@ -174,6 +176,7 @@ void SBEdit()
                 break;
 
             case 'c':
+
                 cout << "\nHometeam Score Update \n" ;
                 cout << "What is the new score?...> ";
                 cin >> newTeamScore;
@@ -183,6 +186,7 @@ void SBEdit()
                 break;
 
             case 'd':
+
                 cout << "\nVisitor Score Update \n" ;
                 cout << "What Is The New Score?...> ";
                 cin >> newTeamScore;
@@ -192,6 +196,7 @@ void SBEdit()
                 break;
 
             case 'e':
+
                 cout << "\nQuarter Update \n";
                 cout << "What Is The Updated Quarter? ...>";
                 cin >> newQuarter;
@@ -201,6 +206,7 @@ void SBEdit()
                 break;
 
             case 'f':
+
                 cout << "\nDown Update \n";
                 cout << "What is the new Down? ...>";
                 cin >> newDown;
@@ -210,6 +216,7 @@ void SBEdit()
                 break;
 
             case 'g':
+
                 cout << "\nTo Go Update \n";
                 cout << "What Is The New To Go? ...>";
                 cin >> newToGo;
@@ -219,6 +226,7 @@ void SBEdit()
                 break;
 
             case 'h':
+
                 cout << "\nHometeam Coach Name Update\n";
                 cout << "What Is The Coach Name?...>";
                 cin >> newCoachName;
@@ -228,6 +236,7 @@ void SBEdit()
                 break;
 
             case 'i':
+
                 cout << "\nVisitors Coach Name Update\n";
                 cout << "What Is The Coach Name?...>";
                 cin >> newCoachName;
@@ -237,6 +246,7 @@ void SBEdit()
                 break;
 
             case 'j':
+
                 cout << "\nHometeam City Update\n";
                 cout << "What Is The City Name?...>";
                 cin >> newHomeCity;
@@ -246,6 +256,7 @@ void SBEdit()
                 break;
 
             case 'k':
+
                 cout << "\nVisitors City Update\n";
                 cout << "What Is The City Name?...>";
                 cin >> newHomeCity;
@@ -255,6 +266,7 @@ void SBEdit()
                 break;
 
             case 'l':
+
                 cout << "\nPossession Update\n";
                 cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
                 cin >> newPoss;
@@ -264,16 +276,19 @@ void SBEdit()
                 break;
 
             case 'x':
+
                 cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
                 cout << "\nGO Cowboys! " << endl;
                 break;
 
             default:
+
                 cout<<"Invalid Choice!!! Enter a valid choice or press X to exit"<<endl;
                 break;
 
         }
         s.SetHometeam(HometeamBoard);
-        s.SetVisitors(VisitorsBoard);               
+        s.SetVisitors(VisitorsBoard);    
+                   
     }while(choice != 'x');
 }
