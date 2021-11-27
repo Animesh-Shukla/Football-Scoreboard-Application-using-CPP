@@ -277,8 +277,8 @@ void SBEdit()
 
             case 'x':
 
-                cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
-                cout << "\nGO Cowboys! " << endl;
+                cout << "\nGame Over!!!" << endl;
+                cout << "\nTerminating. " << endl;
                 break;
 
             default:
@@ -289,6 +289,6 @@ void SBEdit()
         }
         s.SetHometeam(HometeamBoard);
         s.SetVisitors(VisitorsBoard);    
-                   
+
     }while(choice != 'x');
 }
