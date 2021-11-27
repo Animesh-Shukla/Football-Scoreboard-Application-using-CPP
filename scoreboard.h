@@ -40,8 +40,7 @@ class Scoreboard
         bool Possession;//Possesion if the home team has possession of ball true/false
         Team Hometeam;
         Team Visitors;
-        Team coachName;
-        Team HomeCity;
+        
 
     public:
     Scoreboard()
@@ -57,8 +56,7 @@ class Scoreboard
     void SetPoss   (bool pos){ Possession = pos; }
     void SetHometeam (Team hT) { Hometeam = hT; }
     void SetVisitors (Team vT) { Visitors = vT; }
-    void SetCoachName (Team cH) { coachName = cH;}
-    void setHomeCity (Team Hc) { HomeCity = Hc;}
+    
  
     int GetQuarter() const { return Quarter;}
     int GetDown() const { return down;}
@@ -66,8 +64,7 @@ class Scoreboard
     bool GetPoss() const { return Possession;}
     Team GetHomeTeam() const { return Hometeam; }
     Team GetVisitors() const { return Visitors; }
-    Team GetcoachName() const { return coachName;}
-    Team getHomeCity() const { return HomeCity; }
+    
 
     void ShowScoreboard()
     {
@@ -82,14 +79,13 @@ class Scoreboard
 
         cout << color << "__________ Football Scoreboard __________" << reset << endl;
         //cout << setw(24) << "||10:37||" << endl;
-        for( int i = 0; i < 40; i++) {cout << "*";}
+        for( int i = 0; i < 40; i++) cout << "*";
         cout << endl;
         cout << colorHome <<setw(9)<< "HomeTeam" << colorVisitor << setw(29) <<"Visitors" << reset << endl;
         cout << setw(10) <<  Hometeam.getTeamName() << setw(29) << Visitors.getTeamName()  << endl;
-
         cout << setw(6) << Hometeam.getTeamScore() << setw(30) << Visitors.getTeamScore() << endl;
 
-        if(Possession == true)//displays the possession of the ball initially but changes due to user input selection
+        if(Possession)//displays the possession of the ball initially but changes due to user input selection
         {
             cout << setw(22)  << colorRed << "O<"<< reset << " POSS" << endl;
         }
@@ -99,7 +95,7 @@ class Scoreboard
         }
 
         cout << setw(25) << "Quarter: " << Quarter << endl;
-        cout << "\n" << endl;
+        cout << endl << endl;
 
         cout << setw(10) << GetDown() << " < Down" << setw(16) << "To Go > " << GetToGo() << "\n" << endl;
 
@@ -114,8 +110,8 @@ class Scoreboard
 void SBEdit()
 {
     Scoreboard s;
-    Team HometeamBoard;//object for Team that becomes Scoreboard member
-    Team VisitorsBoard;//object for Team that becomes Scoreboard member
+    Team HometeamBoard;
+    Team VisitorsBoard;
       
     char choice = '\0';
     int newTeamScore = 0;
@@ -153,7 +149,7 @@ void SBEdit()
         cout << "L. Update Possesion" << endl;// updates the possession of the ball by user input 
 
         cout << "X. To Exit Scoreboard\n" << endl;
-        cout << "Enter Choice Here....> ";
+        cout << "Input Your Choice....> ";
         cout << MenuReset;// reset menu color to white for legibility in choice selection
         cin >> choice;
         choice=tolower(choice);
@@ -165,102 +161,117 @@ void SBEdit()
                 cin >> newTeamName;
                 HometeamBoard.setTeamName(newTeamName);
                 cout << "Updating Team Name for Hometeam to " << HometeamBoard.getTeamName() << endl;
-                Sleep(1); 
+                Sleep(1000); 
                 break;
+
             case 'b':
                 cout << "\nVisitors Name Update \n";
                 cout << "What Is The New Team Name?...> ";
                 cin >> newTeamName;
                 VisitorsBoard.setTeamName(newTeamName);
                 cout << "Updating Team  Name for Visitors to  " << VisitorsBoard.getTeamName() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'c':
                 cout << "\nHometeam Score Update \n" ;
                 cout << "What is the new score?...> ";
                 cin >> newTeamScore;
                 HometeamBoard.setTeamScore(newTeamScore);
                 cout << "\nUpdating New Hometown Score To ..." << HometeamBoard.getTeamScore() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'd':
                 cout << "\nVisitor Score Update \n" ;
                 cout << "What Is The New Score?...> ";
                 cin >> newTeamScore;
                 VisitorsBoard.setTeamScore(newTeamScore);
                 cout << "\nUpdating New Visitor Score To ..." << VisitorsBoard.getTeamScore() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'e':
                 cout << "\nQuarter Update \n";
                 cout << "What Is The Updated Quarter? ...>";
                 cin >> newQuarter;
                 s.SetQuarter(newQuarter);
                 cout << "\nUpdating Quarter To ..." << s.GetQuarter() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'f':
                 cout << "\nDown Update \n";
                 cout << "What is the new Down? ...>";
                 cin >> newDown;
                 s.SetDown(newDown);
                 cout << "\nUpdating Down To ..." << s.GetDown() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'g':
                 cout << "\nTo Go Update \n";
                 cout << "What Is The New To Go? ...>";
                 cin >> newToGo;
                 s.SetToGo(newToGo);
                 cout << "\nUpdating  To Go To ..." << s.GetToGo() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'h':
                 cout << "\nHometeam Coach Name Update\n";
                 cout << "What Is The Coach Name?...>";
                 cin >> newCoachName;
                 HometeamBoard.setCoachName(newCoachName);
                 cout << "\nUpdating Coach Name To ..." << HometeamBoard.getCoachName() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'i':
                 cout << "\nVisitors Coach Name Update\n";
                 cout << "What Is The Coach Name?...>";
                 cin >> newCoachName;
                 VisitorsBoard.setCoachName(newCoachName);
                 cout << "\nUpdating Coach Name To ..." << VisitorsBoard.getCoachName() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'j':
                 cout << "\nHometeam City Update\n";
                 cout << "What Is The City Name?...>";
                 cin >> newHomeCity;
                 HometeamBoard.setHomeCity(newHomeCity);
                 cout << "\nUpdating Hometeam City Name To ..." << HometeamBoard.getCoachName() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'k':
                 cout << "\nVisitors City Update\n";
                 cout << "What Is The City Name?...>";
                 cin >> newHomeCity;
                 VisitorsBoard.setHomeCity(newHomeCity);
                 cout << "\nUpdating Visitors City Name To ..." << VisitorsBoard.getCoachName() << endl;
-                Sleep(1);
+                Sleep(1000);
                 break;
+
             case 'l':
                 cout << "\nPossession Update\n";
                 cout << "Who Has Possesion?( 1 For Hometeam, 0 For Visitors)...>";
                 cin >> newPoss;
                 s.SetPoss(newPoss);
                 cout << "\nUpdating Possesssion To ... " << s.GetPoss() << endl;
-                Sleep(2);
+                Sleep(2000);
                 break;
+
             case 'x':
                 cout << "\nAnd That's Game Over.... See Ya Later Champ" << endl;
                 cout << "\nGO Cowboys! " << endl;
                 break;
-            default:cout<<"BC"<<endl;
+
+            default:
+                cout<<"BC"<<endl;
                 break;
+
         }
         s.SetHometeam(HometeamBoard);
         s.SetVisitors(VisitorsBoard);               
